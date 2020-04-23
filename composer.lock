@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a36b3135d150fb809c0b2b64a5a5411d",
+    "content-hash": "86acfbcd4ea2bb005713fd70fcbe150e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -817,16 +817,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.7.0",
+            "version": "v7.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "3c9a67a35a4386f861ae0a5eb178a709552e4fa9"
+                "reference": "4de129177f889cd7672e732d8808020adfb7b121"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3c9a67a35a4386f861ae0a5eb178a709552e4fa9",
-                "reference": "3c9a67a35a4386f861ae0a5eb178a709552e4fa9",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4de129177f889cd7672e732d8808020adfb7b121",
+                "reference": "4de129177f889cd7672e732d8808020adfb7b121",
                 "shasum": ""
             },
             "require": {
@@ -965,7 +965,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-04-21T13:50:23+00:00"
+            "time": "2020-04-21T18:57:12+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1252,16 +1252,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v1.0.12",
+            "version": "v1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "d1bad84e24e290bc3f6745d88dddc19023865a68"
+                "reference": "2f2035c2be547f7af7782c0231eebf7413d5d9e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/d1bad84e24e290bc3f6745d88dddc19023865a68",
-                "reference": "d1bad84e24e290bc3f6745d88dddc19023865a68",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/2f2035c2be547f7af7782c0231eebf7413d5d9e0",
+                "reference": "2f2035c2be547f7af7782c0231eebf7413d5d9e0",
                 "shasum": ""
             },
             "require": {
@@ -1305,13 +1305,7 @@
                 }
             ],
             "description": "A front-end framework for Laravel.",
-            "funding": [
-                {
-                    "url": "https://github.com/calebporzio",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-04-01T16:32:31+00:00"
+            "time": "2020-04-23T01:49:34+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -4434,16 +4428,16 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.6.7",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "edd69c5e0508972c81f1f7173236de2459c45814"
+                "reference": "5f677edc14bdcfdcac36633e6eea71b2728a4dbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/edd69c5e0508972c81f1f7173236de2459c45814",
-                "reference": "edd69c5e0508972c81f1f7173236de2459c45814",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/5f677edc14bdcfdcac36633e6eea71b2728a4dbc",
+                "reference": "5f677edc14bdcfdcac36633e6eea71b2728a4dbc",
                 "shasum": ""
             },
             "require": {
@@ -4459,7 +4453,7 @@
                 "illuminate/config": "^5.5|^6|^7",
                 "illuminate/view": "^5.5|^6|^7",
                 "mockery/mockery": "^1.3",
-                "orchestra/testbench": "^3|^4",
+                "orchestra/testbench": "^3|^4|^5",
                 "phpro/grumphp": "^0.17.1",
                 "squizlabs/php_codesniffer": "^3"
             },
@@ -4501,7 +4495,13 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2020-02-25T20:41:32+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/barryvdh",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-04-22T09:57:26+00:00"
         },
         {
             "name": "barryvdh/reflection-docblock",
@@ -6503,16 +6503,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.3",
+            "version": "8.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "67750516bc02f300e2742fed2f50177f8f37bedf"
+                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/67750516bc02f300e2742fed2f50177f8f37bedf",
-                "reference": "67750516bc02f300e2742fed2f50177f8f37bedf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8474e22d7d642f665084ba5ec780626cbd1efd23",
+                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23",
                 "shasum": ""
             },
             "require": {
@@ -6592,7 +6592,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-31T08:52:04+00:00"
+            "time": "2020-04-23T04:39:42+00:00"
         },
         {
             "name": "scrivo/highlight.php",
@@ -7606,7 +7606,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2.5"
+        "php": "^7.2.5",
+        "ext-json": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"

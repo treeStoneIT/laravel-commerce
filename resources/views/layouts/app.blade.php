@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -18,10 +19,11 @@
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
     <div id="app">
-        <div class="bg-gray-100 px-10 py-3 text-center">
+        @include('includes.navigation')
+       {{-- <div class="bg-gray-100 px-10 py-3 text-center">
             <img class="max-w-full sm:max-w-screen-sm inline-block h-32" src="{{ asset('img/famous-tr.png') }}"
                  alt="Butcher Shop Logo" />
-        </div>
+        </div>--}}
        {{-- <nav class="bg-blue-900 shadow mb-8 py-6">
             <div class="container mx-auto px-6 md:px-0">
                 <div class="flex items-center justify-center">
@@ -52,6 +54,7 @@
             </div>
         </nav>--}}
         @yield('content')
+        @include('includes.footer')
     </div>
     @livewireScripts
 </body>
