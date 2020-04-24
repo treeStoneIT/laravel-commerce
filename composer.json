@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "ext-bcmath": "*",
         "ext-json": "*",
         "calebporzio/sushi": "^2.0",
         "fideloper/proxy": "^4.2",
@@ -19,6 +20,7 @@
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^1.0",
         "spatie/laravel-medialibrary": "^8.0.0",
+        "stripe/stripe-php": "^7.29",
         "treestoneit/shopping-cart": "^1.2"
     },
     "require-dev": {

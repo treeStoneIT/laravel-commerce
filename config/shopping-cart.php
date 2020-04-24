@@ -21,7 +21,7 @@ return [
         /*
          * This tax rate will be used with 'flat' mode.
          */
-        'rate' => 0,
+        'rate' => 13,
     ]
 
 ];

@@ -5,7 +5,7 @@
     <td class="px-2 py-2 whitespace-no-wrap text-sm leading-5 text-gray-500 text-center">
         {{$item->quantity}} {{$item->buyable->unit->label}}
         <div class="mt-1 sm:mt-0">
-            <div class="max-w-lg flex rounded-md shadow-sm">
+            <div class="max-w-lg flex inline-flex rounded-md shadow-sm">
                 <button wire:click="decreaseQty" class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
                     -
                 </button>
@@ -17,10 +17,10 @@
         </div>
     </td>
     <td class="px-2 py-2 whitespace-no-wrap text-sm leading-5 text-gray-500 text-center">
-        ${{ $item->price }}
+        @money($item->price)
     </td>
     <td class="px-2 py-2 whitespace-no-wrap text-sm leading-5 text-gray-500 text-center">
-        <span>${{ $item->subtotal }}</span>
+        @money($item->subtotal)
     </td>
     <td class="px-2 py-2 whitespace-no-wrap text-right text-sm leading-5 font-medium text-center align-middle">
             <svg wire:click="removeItem" class="h-4 w-4 text-gray-400 hover:text-red-400 cursor-pointer" fill="currentColor" viewBox="0 0 20 20">

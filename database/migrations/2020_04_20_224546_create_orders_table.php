@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')
                   ->references('id')
                   ->on('users');
-            $table->dateTime('purchase_date')->default(now());
+            $table->dateTime('purchase_date')->useCurrent();
             $table->unsignedSmallInteger('order_status_id');
             $table->unsignedSmallInteger('delivery_method_id');
             $table->string('name');

@@ -1,4 +1,4 @@
-<div class="px-4 mt-8 sm:px-0 @unless($cartContentCount) hidden @endif">
+<div class="mt-8 @unless($cartContentCount) hidden @endif">
     <h3 class="text-lg font-medium leading-6 text-red-700 text-center mb-4">
         ~ Order Form ~
     </h3>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="mt-5 sm:mt-4">
                         <button wire:click="store()" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5">
-                            Save
+                            Checkout
                         </button>
                     </div>
                 </div>
@@ -70,3 +70,25 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script type="text/javascript" defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            var stripe = Stripe('{{config('services.stripe.pk')}}');
+            window.livewire.on('stripe-payment', stripeSessionID => {
+                stripe.redirectToCheckout({
+                    // Make the id field from the Checkout Session creation API response
+                    // available to this file, so you can provide it as parameter here
+                    // instead of the CHECKOUT_SESSION_ID placeholder.
+                    sessionId: stripeSessionID
+                }).then(function (result) {
+                    // If `redirectToCheckout` fails due to a browser or network
+                    // error, display the localized error message to your customer
+                    // using `result.error.message`.
+                });
+                // alert(stripeSessionID);
+                // or whatever alerting library you'd like to use
+            })
+        })
+    </script>
+@endpush

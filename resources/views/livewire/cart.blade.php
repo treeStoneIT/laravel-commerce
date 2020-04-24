@@ -1,4 +1,4 @@
-<div class="px-4 sm:px-0">
+<div class="">
     <h3 class="text-lg font-medium leading-6 text-red-700 text-center mb-4">
         ~ Order Details ~
     </h3>
@@ -37,7 +37,7 @@
                                 Subtotal
                             </th>
                             <th colspan="2" class="px-4 py-2 border-b border-gray-300 bg-gray-100 text-left text-xs leading-4 font-bold text-gray-700 uppercase tracking-wider text-right">
-                                ${{$cartSubtotal}}
+                                @money($cartSubtotal)
                             </th>
                         </tr>
                         <tr>
@@ -45,7 +45,7 @@
                                 Tax (HST)
                             </th>
                             <th colspan="2" class="px-4 py-2 border-b border-gray-300 bg-gray-100 text-left text-xs leading-4 font-bold text-gray-700 uppercase tracking-wider text-right">
-                                ${{$cartTax}}
+                                @money($cartTax)
                             </th>
                         </tr>
                         <tr>
@@ -53,7 +53,7 @@
                                 Total
                             </th>
                             <th colspan="2" class="px-4 py-2 border-b border-gray-300 bg-gray-100 text-left text-xs leading-4 font-bold text-gray-700 uppercase tracking-wider text-right">
-                                ${{ $cartTotal }}
+                                @money($cartTotal)
                             </th>
                         </tr>
                         </tfoot>
@@ -63,5 +63,3 @@
         </div>
     </div>
 </div>
-
-<livewire:order-form/>

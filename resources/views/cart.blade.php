@@ -24,15 +24,10 @@
                 </p>
             </div>
             <div class="md:grid md:grid-cols-3 md:gap-6">
-                <div class="mt-5 md:mt-0 md:col-span-2">
-                    @forelse($category->products as $product)
-                        <livewire:product :product="$product"/>
-                    @empty
-                        @include('product-wrapper-empty')
-                    @endforelse
+                <div class="mt-5 md:col-span-2 md:mt-8">
+                    <livewire:cart/>
                 </div>
                 <div class="md:col-span-1">
-                    <livewire:cart/>
                     <livewire:order-form/>
                 </div>
             </div>

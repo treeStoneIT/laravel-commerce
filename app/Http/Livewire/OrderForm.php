@@ -3,9 +3,9 @@
 namespace App\Http\Livewire;
 
 use App\DeliveryMethod;
-use App\Order;
-use App\OrderItem;
 use Livewire\Component;
+use Stripe\Stripe;
+use Stripe\Checkout\Session as StripeCheckoutSession;
 use Treestoneit\ShoppingCart\Facades\Cart;
 
 class OrderForm extends Component
@@ -32,6 +32,15 @@ class OrderForm extends Component
                                                      ->pluck('label', 'id')
                                                      ->toArray();
         $this->cartContentCount      = Cart::count();
+
+        if ($orderFormData = session('order-form')) {
+            $this->delivery_method = $orderFormData['delivery_method'];
+            $this->name            = $orderFormData['name'];
+            $this->tel             = $orderFormData['tel'];
+            $this->email           = $orderFormData['email'];
+            $this->address         = $orderFormData['address'];
+            $this->comments        = $orderFormData['comments'];
+        }
     }
 
     public function render()
@@ -41,7 +50,7 @@ class OrderForm extends Component
 
     public function validateForm()
     {
-        $this->validate([
+        $validatedData = $this->validate([
             'delivery_method' => 'required',
             'name'            => 'required',
             'tel'             => 'required',
@@ -49,59 +58,79 @@ class OrderForm extends Component
             'address'         => 'required',
             'comments'        => 'nullable',
         ]);
+
+        session(['order-form' => $validatedData]);
     }
 
     public function store()
     {
         $this->validateForm();
+        $this->stripeSessionCreate();
+    }
 
+    public function stripeSessionCreate()
+    {
         $cartContent      = Cart::content();
-        $cartContentArray = $cartContent->toArray();
 
-        $cartProducts     = [];
+        $cartProducts = [];
         foreach ($cartContent as $lineItem) {
+            $product = [
+                'name'        => $lineItem['buyable']['name'] . " - (" . $lineItem['buyable']['id'] . ")",
+                'amount'      => bcmul($lineItem['price'], 100),
+                'currency'    => config('services.stripe.currency'),
+                'quantity'    => $lineItem['quantity'],
+            ];
+
+            // stripe doesn't like empty params so we only include if there is a value
+            if (!empty($lineItem['options']['product_note'])){
+                $product['description'] = $lineItem['options']['product_note'];
+            }
+
+            $cartProducts[] = $product;
+        }
+
+        // add tax
+        $cartProducts[] = [
+            'name'        => "TAX",
+            'description' => "HST",
+            'amount'      => bcmul(Cart::tax(), 100),
+            'currency'    => config('services.stripe.currency'),
+            'quantity'    => 1,
+        ];
+
+        // delivery charges if needed
+        if ($this->delivery_method == 2){
             $cartProducts[] = [
-                'id'       => $lineItem['buyable']['id'],
-                'name'     => $lineItem['buyable']['name'],
-                'qty'      => $lineItem['quantity'],
-                'price'    => $lineItem['price'],
-                'subtotal' => $lineItem['subtotal'],
-                'options'  => $lineItem['options']
+                'name'        => "Delivery Fee",
+                'description' => "Local Delivery",
+                'amount'      => 1000,
+                'currency'    => config('services.stripe.currency'),
+                'quantity'    => 1,
+            ];
+            $cartProducts[] = [
+                'name'        => "Tax on Delivery Service",
+                'description' => "HST",
+                'amount'      => 130,
+                'currency'    => config('services.stripe.currency'),
+                'quantity'    => 1,
             ];
         }
 
+        Stripe::setApiKey(config('services.stripe.sk'));
 
-        $cartSubtotal = Cart::subtotal();
-        $cartTax      = Cart::tax();
-
-        $order = Order::create([
-            'order_status_id'    => 1,
-            'delivery_method_id' => $this->delivery_method,
-            'name'               => $this->name,
-            'tel'                => $this->tel,
-            'email'              => $this->email,
-            'address'            => $this->address,
-            'note'               => $this->comments,
-            'products'           => json_encode($cartProducts),
-            'subtotal'           => $cartSubtotal,
-            'tax'                => $cartTax,
-            'total'              => $cartSubtotal + $cartTax,
+        $session = StripeCheckoutSession::create([
+            'payment_intent_data' => [
+                'setup_future_usage' => 'off_session',
+                'capture_method' => 'manual',
+            ],
+            'payment_method_types' => ['card'],
+            'line_items'           => $cartProducts,
+            'success_url'          => route('payment.success')."?session_id={CHECKOUT_SESSION_ID}",
+            'cancel_url'           => route('cart'),
         ]);
 
-        foreach ($cartProducts as $cartProduct) {
-            OrderItem::create([
-                'order_id'     => $order->id,
-                'product_id'   => $cartProduct['id'],
-                'qty'          => $cartProduct['qty'],
-                'price'        => $cartProduct['price'],
-                'product_note' => $cartProduct['options']['product_note']
-            ]);
-        }
+        session(['stripeCheckSes' => $session]);
 
-
-//        session()->flash('status', "<em>{$this->first_name} {$this->last_name}</em> was successfully added to the portal");
-//        session(["$person->hashed_id" => true]);
-
-//        return redirect()->to(route('view-person', $person->hashed_id));
+        $this->emit('stripe-payment', $session->id);
     }
 }

@@ -21,6 +21,11 @@ Route::get('/', 'CategoryController@index')->name('categories');
 
 Route::get('category/{slug}', 'CategoryController@showBySlug')->name('category.by-slug');
 
+Route::view('/cart', 'cart')->name('cart');
+
+Route::any('/payment/success', 'PaymentController@success')->name('payment.success');
+Route::any('/cancel', 'PaymentController@cancel')->name('payment.cancel');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
