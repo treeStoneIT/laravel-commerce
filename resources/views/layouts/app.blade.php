@@ -19,14 +19,20 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @livewireStyles
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
-    <div id="app" class="md:min-h-screen md:-mb-10 md:pb-10">
-        @include('includes.navigation')
-        @yield('content')
-    </div>
-    @include('includes.footer')
-    @livewireScripts
-    @stack('scripts')
+<div id="app" class="md:min-h-screen md:-mb-10 md:pb-10">
+    @include('includes.navigation')
+    @yield('content')
+</div>
+@include('includes.footer')
+<livewire:simple-notification>
+@livewireScripts
+@stack('scripts')
 </body>
 </html>

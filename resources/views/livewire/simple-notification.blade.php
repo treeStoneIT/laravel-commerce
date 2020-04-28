@@ -2,7 +2,7 @@
     <div x-data="{ show: {{$notificationOpen}} }"
          x-cloak
          x-show="show"
-         x-init="setTimeout(() => @this.set('notificationOpen', 'false'),5000)"
+         x-init="setTimeout(() => @this.set('notificationOpen', 'false'),10000)"
          x-description="Notification panel, show/hide based on alert state."
          x-transition:enter="transform ease-out duration-300 transition"
          x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"

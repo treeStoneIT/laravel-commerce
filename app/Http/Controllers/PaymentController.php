@@ -28,6 +28,7 @@ class PaymentController extends Controller
 
             Cart::destroy();
             session()->forget(['order-form', 'stripeCheckSes']);
+            session()->flash('success', 'Thank you for your order');
             return redirect()->route('categories');
 
         } catch (ApiErrorException $e) {

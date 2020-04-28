@@ -38,6 +38,7 @@ class Product extends Component
     public function addToCart()
     {
         Cart::add($this->product, $this->qty, ['product_note' => $this->note]);
+        $this->emit('productAddedToCart',$this->product->name);
         $this->refreshCartContents();
         $this->qty = 1;
         $this->note = '';

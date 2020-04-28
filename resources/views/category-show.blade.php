@@ -34,6 +34,7 @@
                 <div class="md:col-span-1">
                     <livewire:cart/>
                     <livewire:order-form/>
+                    <livewire:notification-cart/>
                 </div>
             </div>
         </div>
