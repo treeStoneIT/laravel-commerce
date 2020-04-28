@@ -57,6 +57,11 @@ class Product extends Model implements Buyable, HasMedia
              ->width(500)
              ->height(500)
              ->performOnCollections('product-featured');
+
+        $this->addMediaConversion('1000')
+             ->width(1000)
+             ->height(1000)
+             ->performOnCollections('product-featured');
     }
 
     public function category()
