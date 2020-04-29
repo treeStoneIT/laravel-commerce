@@ -9,8 +9,8 @@
         </p>
         <p>{{ $product->description }}</p>
         <div class="mt-4 sm:mt-3">
-            <div class="grid grid-cols-3 gap-4 items-start border-t border-gray-200 pt-5">
-                <div class="mt-1 sm:mt-0">
+            <div class="grid grid-cols-5 sm:grid-cols-3 gap-2 sm:gap-4 items-start border-t border-gray-200 pt-5">
+                <div class="mt-1 sm:mt-0 col-span-2 sm:col-span-1">
                     <div class="max-w-lg flex rounded-md shadow-sm">
                         <button wire:click="decreaseQty" {{$qty > 1 ? '': 'disabled'}}
                             class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm {{$qty > 1 ? '': 'opacity-50 cursor-not-allowed'}}">
@@ -32,7 +32,7 @@
                 <p class="block text-sm font-medium leading-5 text-gray-700 mt-px pt-2">
                     {{$product->unit->label}}
                 </p>
-                <div class="block text-3xl font-bold font-medium leading-5 text-red-500 mt-px pt-2 text-right">
+                <div class="block text-3xl font-bold font-medium leading-5 text-red-500 mt-px pt-2 text-right col-span-2 sm:col-span-1">
                     ${{ $product->price }}
                 </div>
             </div>
