@@ -2,9 +2,9 @@
     <h3 class="text-lg font-medium leading-6 text-red-700 text-center mb-4">
         ~ Order Details ~
     </h3>
-    <div class="flex flex-col shadow-lg">
+    <div class="overflow-hidden shadow sm:rounded-lg">
         <div class="-my-2 py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-            <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+            <div class="align-middle inline-block min-w-full overflow-hidden sm:rounded-lg">
                 <table class="w-full">
                     <thead>
                     <tr>
@@ -49,10 +49,10 @@
                             </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="px-4 py-2 border-b border-gray-300 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                            <th colspan="3" class="px-4 py-2 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Total
                             </th>
-                            <th colspan="2" class="px-4 py-2 border-b border-gray-300 bg-gray-100 text-left text-xs leading-4 font-bold text-gray-700 uppercase tracking-wider text-right">
+                            <th colspan="2" class="px-4 py-2 bg-gray-100 text-left text-xs leading-4 font-bold text-gray-700 uppercase tracking-wider text-right">
                                 @money($cartTotal)
                             </th>
                         </tr>
