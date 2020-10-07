@@ -9,11 +9,11 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string|null $label
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Unit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Unit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Unit query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Unit whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Unit whereLabel($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Unit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Unit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Unit query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Unit whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Unit whereLabel($value)
  * @mixin \Eloquent
  */
 class Unit extends Model

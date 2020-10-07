@@ -21,7 +21,7 @@
         "livewire/livewire": "^1.0",
         "spatie/laravel-medialibrary": "^8.0.0",
         "stripe/stripe-php": "^7.29",
-        "treestoneit/shopping-cart": "^1.2"
+        "treestoneit/shopping-cart": "^1.4.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

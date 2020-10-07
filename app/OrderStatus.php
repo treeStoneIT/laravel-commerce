@@ -10,11 +10,11 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string|null $label
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderStatus newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderStatus newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderStatus query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderStatus whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderStatus whereLabel($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderStatus newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderStatus newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderStatus query()
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderStatus whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderStatus whereLabel($value)
  * @mixin \Eloquent
  */
 class OrderStatus extends Model

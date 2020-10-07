@@ -17,17 +17,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Product $RelatedProduct
  * @property-read \App\Order $parentOrder
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereOrderId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem wherePrice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereProductId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereProductNote($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereQty($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OrderItem whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereOrderId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereProductId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereProductNote($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereQty($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class OrderItem extends Model
