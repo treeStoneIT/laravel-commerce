@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $product_id
  * @property int $qty
  * @property float $price
- * @property string $product_note
+ * @property mixed|null $options
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Product $RelatedProduct
@@ -22,10 +22,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem query()
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereOptions($value)
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereOrderId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem wherePrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereProductId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereProductNote($value)
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereQty($value)
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem whereUpdatedAt($value)
  * @mixin \Eloquent
