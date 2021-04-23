@@ -15,38 +15,28 @@ use Treestoneit\ShoppingCart\BuyableTrait;
  * @property int $id
  * @property int $category_id
  * @property string $name
- * @property string|null $sku
+ * @property string $sku
  * @property string|null $description
- * @property float|null $price
- * @property int $fixed_price
- * @property int $taxable
- * @property int $sort
- * @property int|null $unit_id
- * @property mixed|null $options
- * @property mixed|null $variants
+ * @property float $price
+ * @property int $unit_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Category $category
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|Media[] $media
  * @property-read int|null $media_count
- * @property-read \App\Unit|null $unit
+ * @property-read \App\Unit $unit
  * @method static \Illuminate\Database\Eloquent\Builder|Product newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Product newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Product query()
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereCategoryId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Product whereFixedPrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Product whereOptions($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Product wherePrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereSku($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Product whereSort($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Product whereTaxable($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Product whereVariants($value)
  * @mixin \Eloquent
  */
 class Product extends Model implements Buyable, HasMedia

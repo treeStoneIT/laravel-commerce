@@ -21,13 +21,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed $products
  * @property float $subtotal
  * @property float $tax
- * @property float $delivery_cost
  * @property float $total
  * @property string|null $paid_date
  * @property string|null $paid_detail
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property string|null $deleted_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\OrderItem[] $OrderItems
  * @property-read int|null $order_items_count
  * @property-read \App\DeliveryMethod $deliveryMethod
@@ -39,8 +37,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereAddress($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereAdminNote($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Order whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Order whereDeliveryCost($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereDeliveryMethodId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereId($value)
