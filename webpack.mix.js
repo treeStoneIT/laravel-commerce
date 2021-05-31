@@ -15,8 +15,7 @@ require('laravel-mix-tailwind');
 
 mix.js("resources/js/app.js", "public/js/app.js")
     .postCss("resources/css/app.css", "public/css/app.css")
-    .tailwind("./tailwind.config.js")
-    .sourceMaps();
+    .tailwind("./tailwind.config.js");
 
 if (mix.inProduction()) {
     mix.version();
