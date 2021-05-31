@@ -1,8 +1,4 @@
 module.exports = {
-    theme: {
-        extend: {}
-    },
-    variants: {},
     purge: {
         content: [
             './resources/**/*.php',
@@ -16,8 +12,5 @@ module.exports = {
             whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/],
         },
     },
-    plugins: [
-        require('@tailwindcss/custom-forms'),
-        require('@tailwindcss/ui'),
-    ]
+    plugins: [require('@tailwindcss/custom-forms'), require('@tailwindcss/ui')],
 }
